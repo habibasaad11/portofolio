@@ -29,7 +29,7 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- Navigation --- */
+       
         header {
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
@@ -45,22 +45,25 @@
         .nav-links a { text-decoration: none; color: var(--deep-text); margin-left: 25px; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--dark-olive); }
 
-        /* --- Hero Section --- */
+       
         .hero { padding: 160px 0 60px; text-align: center; background: linear-gradient(to bottom, var(--light-cream), var(--bg-page)); }
-        .hero-img { width: 150px; height: 150px; border-radius: 40px; border: 5px solid var(--white); margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .hero-img { width: 300px; height: 300px; border-radius: 40px; border: 5px solid var(--white); margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .hero h1 { font-size: 3rem; margin-bottom: 10px; color: var(--dark-olive); }
         .social-btns { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
         .btn { padding: 10px 25px; border-radius: 12px; text-decoration: none; font-weight: 600; transition: 0.3s; }
         .btn-dark { background: var(--dark-olive); color: white; }
         .btn-light { background: var(--medium-olive); color: var(--deep-text); }
 
-        /* --- About Section --- */
         .about-section { padding: 80px 0; }
         .about-card { background: var(--white); padding: 40px; border-radius: 30px; border-left: 10px solid var(--dark-olive); box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
 
-        /* --- Skills Section --- */
         .section-title { font-size: 2.2rem; margin-bottom: 40px; color: var(--dark-olive); text-align: center; }
-        
+         .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
         .skills-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -79,7 +82,6 @@
 
         @keyframes animateProgress { from { width: 0; } }
 
-        /* --- Projects Grid --- */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -96,19 +98,19 @@
             justify-content: space-between;
             transition: 0.3s;
             border: 1px solid rgba(0,0,0,0.05);
-            position: relative; /* مهم لتموضع الأيقونات */
+            position: relative;
         }
 
         .project-card:hover { transform: translateY(-10px); }
 
-        /* تمييز مشروع الباستا */
-        .pasta-project { grid-column: span 2; background-color: var(--dark-olive); color: white; }
+      
+        .pasta-project { grid-column: span 2; background-image: url('img/Screenshot 2026-04-02 202428.png '); background-size: cover; color: rgb(0, 0, 0); }
+        
         .loading-project { background-color: var(--soft-cream); color: var(--deep-text); border: 2px dashed var(--medium-olive); }
 
-        .tag { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; }
+        .tag { background: rgba(144, 109, 109, 0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; }
         .loading-text { font-style: italic; opacity: 0.6; }
 
-        /* تنسيق روابط المشروع (الأيقونات) */
         .project-links {
             position: absolute;
             bottom: 25px;
@@ -118,7 +120,7 @@
         }
 
         .project-links a {
-            color: white;
+            color: rgb(12, 12, 12);
             font-size: 1.5rem;
             transition: 0.3s;
             opacity: 0.8;
@@ -129,13 +131,51 @@
             opacity: 1;
             transform: scale(1.2);
         }
+            .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+        .service-card {
+            text-align: center;
+            padding: 40px;
+            border-radius: 30px;
+            background: var(--white);
+            border-bottom: 8px solid var(--dark-olive);
+        }
+        .service-card i { font-size: 2.5rem; color: var(--dark-olive); margin-bottom: 20px; }
 
-        /* --- Contact Section --- */
         .contact-box { background: var(--white); padding: 40px; border-radius: 30px; max-width: 700px; margin: 0 auto; text-align: center; border: 2px solid var(--light-cream); }
         .contact-form { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
         input, textarea { padding: 15px; border-radius: 12px; border: 1px solid var(--soft-cream); background: var(--bg-page); outline: none; }
         .submit-btn { background: var(--dark-olive); color: white; border: none; padding: 15px; border-radius: 12px; font-weight: bold; cursor: pointer; }
-
+         .pasta-project {
+    position: relative;
+    overflow: hidden; 
+    z-index: 1;
+}
+.pasta-project::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('img/pasta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    transform: scale(1.1); 
+    z-index: -1; 
+}
+.pasta-project::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(47, 54, 36, 0.4); 
+    z-index: -1;
+}
         @media (max-width: 768px) {
             .projects-grid { grid-template-columns: 1fr; }
             .pasta-project { grid-column: span 1; }
@@ -146,12 +186,14 @@
 </head>
 <body>
 
-    <header>
+   <header>
         <div class="container nav-content">
             <div style="font-weight: 800; font-size: 1.4rem; color: var(--dark-olive);">MY.PORTFOLIO</div>
             <nav class="nav-links">
                 <a href="#about">About</a>
+                <a href="#education">Education</a>
                 <a href="#projects">Projects</a>
+                <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -172,7 +214,28 @@
     <section id="about" class="container about-section">
         <div class="about-card">
             <h2 style="margin-bottom: 15px;">About Me</h2>
-            <p>I am a passionate developer with a keen eye for design. My journey in tech is driven by curiosity and a commitment to building user-centric applications. With a background in AI And Machine Learning, I blend technical logic with creative aesthetics.</p>
+            <p>Hi, I’m a Frontend Developer passionate about building clean, responsive, and user-friendly web interfaces.
+
+I specialize in turning ideas and designs into real, functional websites using HTML, CSS, Bootstrap, and JavaScript. I enjoy creating smooth user experiences and modern designs that work perfectly across all devices.
+
+I focus on writing clean, maintainable code and paying attention to details that make a real difference in the final product. I’m always learning and improving my skills to stay up to date with the latest technologies.
+
+My goal is to create websites that are not only visually appealing but also fast, efficient, and easy to use..</p>
+        </div>
+    </section>
+      <section id="education" class="container">
+        <div class="info-grid">
+            <div class="about-card" style="border-left-color: var(--medium-olive);">
+                <h2 style="margin-bottom: 15px;"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <p><strong>BSc in Artificial Intelligence</strong></p>
+                <p>Kafr El-Sheikh University | 2024 - Present</p>
+            </div>
+            <div class="about-card">
+                <h2 style="margin-bottom: 15px;"><i class="fas fa-briefcase"></i> Experience</h2>
+                <p><strong>Full Stack Web Development Trainee</strong></p>
+                <p>DEPI (Digital Egypt Pioneers Initiative) | Batch 4.</p>
+            </div>
+            
         </div>
     </section>
 
@@ -222,7 +285,7 @@
                 </div>
 
                 <div class="project-links">
-                    <a href="https://github.com/habibasaad11/the-pasta-club" target="_blank" title="View Source on GitHub">
+                    <a href="https://github.com/habibasaad11" target="_blank" title="View Source on GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="https://habibasaad11.github.io/the-pasta-club/" target="_blank" title="Visit Live Site">
@@ -257,6 +320,42 @@
 
         </div>
     </section>
+   <section id="services" class="container">
+        <h2 class="section-title">My Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Building high-performance, responsive websites using the latest MERN stack and modern technologies.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-brain"></i>
+                <h3>AI & Machine Learning</h3>
+                <p>Developing smart solutions including Computer Vision, data analysis, and predictive modeling for your business.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-eye"></i>
+                <h3>Computer Vision</h3>
+                <p>Implementing real-time object detection and color tracking systems using Python and OpenCV.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-database"></i>
+                <h3>Database Architect</h3>
+                <p>Designing efficient SQL and NoSQL database schemas to ensure data integrity and fast performance.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-terminal"></i>
+                <h3>Python Automation</h3>
+                <p>Writing custom scripts to automate repetitive tasks, web scraping, and data processing.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-code-branch"></i>
+                <h3>Full-Stack Systems</h3>
+                <p>Developing complete web applications from logic to deployment using MERN stack and modern environments.</p>
+            </div>
+        </section>
+
 
     <section id="contact" class="container">
         <div class="contact-box">
