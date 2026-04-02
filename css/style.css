@@ -1,0 +1,284 @@
+/* --- الألوان المستخرجة من صورتك --- */
+:root {
+    --dark-green: #345B33;    /* الدرجة 1: الغامقة جداً */
+    --leaf-green: #79AE6F;    /* الدرجة 2: المتوسطة */
+    --mint-green: #9FCB98;    /* الدرجة 3: الفاتحة (الأخضر النعناعي) */
+    --cream-bg: #F2EDC2;      /* الدرجة 4: الكريمي (للخلفية) */
+    --white: #ffffff;
+}
+
+/* --- التنسيق الأساسي --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cream-bg); /* لون الخلفية من الصورة */
+    color: var(--dark-green);
+    line-height: 1.6;
+    border-bottom: 1;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: rgba(242, 237, 194, 0.95); /* لون كريمي شفاف */
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+    border-bottom: 2px solid var(--leaf-green);
+}
+
+.logo {
+    background: var(--dark-green);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background: var(--mint-green); /* اللون الفاتح من الصورة */
+    padding: 8px 20px;
+    border-radius: 30px;
+}
+
+nav ul li a {
+    color: var(--dark-green);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--white);
+}
+
+.talk-btn {
+    background: var(--dark-green);
+    color: var(--white);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.talk-btn:hover{
+  background: var(--leaf-green);
+}
+.cv-btn:hover{
+  background: var(--dark-green);
+}
+.social-icons{
+    margin-top: 20px;
+    
+}
+/* --- Hero Section --- */
+section {
+    padding: 120px 10% 80px;
+    min-height: 100vh;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--dark-green);
+    line-height: 1.1;
+}
+
+
+.greeting {
+    font-weight: bold;
+    color: var(--leaf-green);
+}
+
+.cv-btn {
+    background: var(--leaf-green);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.social-icons a i {
+    font-size: 1.4rem;
+    margin-left: 15px;
+    color: var(--dark-green);
+}
+
+.hero-image img {
+    width: 380px;
+    border-radius: 30px;
+    border: 8px solid var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* --- Cards Style --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    border-bottom: 5px solid var(--leaf-green);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--leaf-green);
+    margin-bottom: 20px;
+}
+.about h1{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 10;
+}
+
+.tags span {
+    background: var(--mint-green);
+    color: var(--dark-green);
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px;
+}
+
+/* --- Contact Section --- */
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 350px;
+}
+
+.info-card i {
+    color: var(--leaf-green);
+}
+
+.contact-form { flex: 1; }
+
+.row { display: flex; gap: 20px; }
+
+.input-group { margin-bottom: 15px; flex: 1; }
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--mint-green);
+    border-radius: 8px;
+    background: var(--white);
+}
+
+.send-btn {
+    width: 100%;
+    background: var(--dark-green);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* تنسيق القسم بالكامل */
+.skills-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    max-width: 1000px;
+    margin: 0 auto; /* توسيط القسم في الصفحة */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* نظام الشبكة لتوزيع المهارات */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* التحكم في المسافة بين كل مهارة والثانية */
+}
+
+/* كارت المهارة */
+.skill-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* شريط التقدم */
+.progress-bar {
+    background-color: #e0e0e0;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden; /* عشان الـ progress مبيطلعش بره */
+}
+
+.progress {
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    height: 100%;
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .hero { flex-direction: column-reverse; text-align: center; }
+    .contact-wrapper { flex-direction: column; }
+    nav ul { display: none; }
+}
